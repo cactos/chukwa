@@ -47,8 +47,9 @@ public class ChunkSaver {
       calendar.set(Calendar.SECOND, 0);
       calendar.set(Calendar.MILLISECOND, 0);
       ChukwaRecordKey key = new ChukwaRecordKey();
-      key.setKey("" + calendar.getTimeInMillis() + "/" + chunk.getDataType()
-          + "/" + chunk.getSource() + "/" + ts);
+      // this is incompatible with the NG architecture
+      // key.setKey("" + calendar.getTimeInMillis() + "/" + chunk.getDataType() + "/" + chunk.getSource() + "/" + ts);
+      key.setKey("" + calendar.getTimeInMillis() + "/" + chunk.getDataType() + "/" + chunk.getSource() + "/" + ts);
       key.setReduceType(chunk.getDataType() + "InError");
 
       record.setTime(ts);
@@ -67,15 +68,15 @@ public class ChunkSaver {
 
       return record;
     } catch (Throwable e) {
-      e.printStackTrace();
+	log.warn("(1)error while saving chunk: ", e);
       try {
-        log.warn("Unable to save a chunk: tags: " + chunk.getTags()
+        log.warn("(2) Unable to save a chunk: tags: " + chunk.getTags()
             + " - source:" + chunk.getSource() + " - dataType: "
             + chunk.getDataType() + " - Stream: " + chunk.getStreamName()
             + " - SeqId: " + chunk.getSeqID() + " - Data: "
             + new String(chunk.getData()));
       } catch (Throwable e1) {
-        e.printStackTrace();
+        log.warn("error when printing chunk", e1);
       }
     }
     return null;
