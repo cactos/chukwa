@@ -1,9 +1,0 @@
-add ExecAdaptor Hardware 60 /root/cactoscale/chukwa/adaptors/hardware.sh 0
-add ExecAdaptor HDisk 60 /root/cactoscale/chukwa/adaptors/hardware-disk.sh 0
-add ExecAdaptor HFilesystem 120 /root/cactoscale/chukwa/adaptors/hardware-filesystem.sh 0
-add ExecAdaptor HUtil 10 /root/cactoscale/chukwa/adaptors/utilisation.sh 0
-add ExecAdaptor HDiskUtil 10 /root/cactoscale/chukwa/adaptors/utilisation-disk.sh 0
-add ExecAdaptor HPower 60 /root/cactoscale/chukwa/adaptors/hardware-power.sh 0
-add ExecAdaptor HPowerUtil 10 /root/cactoscale/chukwa/adaptors/utilisation-power.sh 0
-add ExecAdaptor VM 10 /root/cactoscale/chukwa/adaptors/virtual-machines.sh 0
-add ExecAdaptor KvmTop 10 kvmtop -cpu -memory -disk -network -uuid -batch -r 1 -s 10 0
