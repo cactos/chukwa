@@ -36,7 +36,7 @@
         <test.cache.data>${test.build.dir}/cache</test.cache.data>
         <test.debug.data>${test.build.dir}/debug</test.debug.data>
         <test.log.dir>${test.build.dir}/logs</test.log.dir>
-        <TODO_ALERT_EMAIL>user@example.com</TODO_ALERT_EMAIL>
+        <!--        <TODO_ALERT_EMAIL>user@example.com</TODO_ALERT_EMAIL>
         <TODO_CLUSTER_NAME>chukwa</TODO_CLUSTER_NAME>
         <TODO_COLLECTORS_LOCAL_OUTPUT_DIR>/tmp/chukwa/dataSink/</TODO_COLLECTORS_LOCAL_OUTPUT_DIR>
         <TODO_COLLECTORS_NAMENODE>hdfs://localhost:9000</TODO_COLLECTORS_NAMENODE>
@@ -50,7 +50,7 @@
         <TODO_NAGIOS_SERVER>localhost</TODO_NAGIOS_SERVER>
         <TODO_DEMUX_IO_SORT_MB>64</TODO_DEMUX_IO_SORT_MB>
         <TODO_DEMUX_FS_INMEMORY_SIZE_MB>64</TODO_DEMUX_FS_INMEMORY_SIZE_MB>
-        <TODO_DEMUX_IO_SORT_FACTOR>10</TODO_DEMUX_IO_SORT_FACTOR>
+        <TODO_DEMUX_IO_SORT_FACTOR>10</TODO_DEMUX_IO_SORT_FACTOR>-->
         <CHUKWA_DIR>/chukwa</CHUKWA_DIR>
         <JAVA_HOME>${java.home}</JAVA_HOME>
     </properties>
@@ -340,20 +340,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <plugins>
-            <!--            <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-site-plugin</artifactId>
-                            <version>3.0</version>
-                            <dependencies>
-                                <dependency> add support for ssh/scp 
-                                    <groupId>org.apache.maven.wagon</groupId>
-                                    <artifactId>wagon-ssh</artifactId>
-                                    <version>1.0</version>
-                                </dependency>
-                            </dependencies>
-                        </plugin>
-            -->            
+        <plugins>   
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -376,7 +363,7 @@
                                     <filtering>true</filtering>
                                 </resource>
                             </resources>
-<!--                            <systemPropertyVariables>
+                            <!--                            <systemPropertyVariables>
                                 <test.build.classes>${project.build.directory}/test/classes</test.build.classes>
                                 <CHUKWA_LOG_DIR>${project.build.directory}/logs</CHUKWA_LOG_DIR>
                                 <CHUKWA_CONF_DIR>${test.build.dir}/conf</CHUKWA_CONF_DIR>
@@ -439,109 +426,7 @@
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
-            </plugin><!--
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.1.1</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.10</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>default-test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                        <configuration>
-                            <skip>false</skip>
-                            <argLine>-Xmx1024m</argLine>
-                            <reportsDirectory>${project.build.directory}/test-reports</reportsDirectory>
-                            <forkMode>pertest</forkMode>
-                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <includes>
-                                <include>**/Test*.java</include>
-                            </includes>
-                            <excludes>
-                                <exclude>**/TestFSMBuilder.java</exclude>
-                                <exclude>**/TestDatabase*.java</exclude>
-                                <exclude>**/TestArchive.java</exclude>
-                                <exclude>**/*$*</exclude>
-                            </excludes>
-                            <systemPropertyVariables>
-                                <test.build.classes>${project.build.directory}/test/classes</test.build.classes>
-                                <CHUKWA_LOG_DIR>${project.build.directory}/logs</CHUKWA_LOG_DIR>
-                                <CHUKWA_CONF_DIR>${test.build.dir}/conf</CHUKWA_CONF_DIR>
-                                <CHUKWA_DATA_DIR>${test.build.dir}/var</CHUKWA_DATA_DIR>
-                                <CHUKWA_PID_DIR>${test.build.dir}/var/run</CHUKWA_PID_DIR>
-                                <CHUKWA_HDFS>/chukwa</CHUKWA_HDFS>
-                                <CHUKWA_HOME>${basedir}/target</CHUKWA_HOME>
-                            </systemPropertyVariables>
-                            <environmentVariables>
-                                <CHUKWA_LOG_DIR>${project.build.directory}/logs</CHUKWA_LOG_DIR>
-                                <CHUKWA_CONF_DIR>${test.build.dir}/conf</CHUKWA_CONF_DIR>
-                                <CHUKWA_DATA_DIR>${test.build.dir}/var</CHUKWA_DATA_DIR>
-                                <CHUKWA_PID_DIR>${test.build.dir}/var/run</CHUKWA_PID_DIR>
-                                <CHUKWA_HDFS>/chukwa</CHUKWA_HDFS>
-                                <CHUKWA_HOME>${basedir}/target</CHUKWA_HOME>
-                            </environmentVariables>
-                            <workingDirectory>${project.build.directory}/test/classes</workingDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <phase>integration-test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                        <configuration>
-                            <skip>false</skip>
-                            <argLine>-Xmx1024m</argLine>
-                            <reportsDirectory>${project.build.directory}/test-reports</reportsDirectory>
-                            <forkMode>pertest</forkMode>
-                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <includes>
-                                <include>**/TestFSMBuilder.java</include>
-                            </includes>
-                            <excludes>
-                                <exclude>**/TestDatabase*.java</exclude>
-                                <exclude>**/TestArchive.java</exclude>
-                                <exclude>**/*$*</exclude>
-                            </excludes>
-                            <systemPropertyVariables>
-                                <CHUKWA_LOG_DIR>${project.build.directory}/logs</CHUKWA_LOG_DIR>
-                                <CHUKWA_CONF_DIR>${test.build.dir}/conf</CHUKWA_CONF_DIR>
-                                <CHUKWA_DATA_DIR>${test.build.dir}/var</CHUKWA_DATA_DIR>
-                                <CHUKWA_PID_DIR>${test.build.dir}/var/run</CHUKWA_PID_DIR>
-                                <CHUKWA_HDFS>/chukwa</CHUKWA_HDFS>
-                                <CHUKWA_HOME>${basedir}/target</CHUKWA_HOME>
-                            </systemPropertyVariables>
-                            <environmentVariables>
-                                <CHUKWA_LOG_DIR>${project.build.directory}/logs</CHUKWA_LOG_DIR>
-                                <CHUKWA_CONF_DIR>${test.build.dir}/conf</CHUKWA_CONF_DIR>
-                                <CHUKWA_DATA_DIR>${test.build.dir}/var</CHUKWA_DATA_DIR>
-                                <CHUKWA_PID_DIR>${test.build.dir}/var/run</CHUKWA_PID_DIR>
-                                <CHUKWA_HDFS>/chukwa</CHUKWA_HDFS>
-                                <CHUKWA_HOME>${basedir}/target</CHUKWA_HOME>
-                            </environmentVariables>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>-->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
