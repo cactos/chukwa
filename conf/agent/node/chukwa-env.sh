@@ -21,6 +21,8 @@
 # set JAVA_HOME in this file, so that it is correctly defined on
 # remote nodes.
 
+export CHUKWA_HOME=${CHUKWA_HOME}
+
 # The java implementation to use.  Required.
 export JAVA_HOME=${JAVA_HOME}
 
@@ -38,10 +40,10 @@ export HADOOP_CONF_DIR="${HADOOP_CONF_DIR}"
 export chukwaRecordsRepository="/chukwa/repos/"
 
 # The directory where pid files are stored. CHUKWA_HOME/var/run by default.
-export CHUKWA_PID_DIR=${TODO_CHUKWA_PID_DIR}
+export CHUKWA_PID_DIR=/tmp/chukwa/pidDir
 
 # The location of chukwa logs, defaults to CHUKWA_HOME/logs
-export CHUKWA_LOG_DIR=${TODO_CHUKWA_LOG_DIR}
+export CHUKWA_LOG_DIR=${CHUKWA_HOME}/log
 
 # The location to store chukwa data, defaults to CHUKWA_HOME/data
 #export CHUKWA_DATA_DIR="${CHUKWA_HOME}/data"
@@ -50,7 +52,7 @@ export CHUKWA_LOG_DIR=${TODO_CHUKWA_LOG_DIR}
 export CHUKWA_IDENT_STRING=$USER
 
 export JAVA_PLATFORM=Linux-i386-32
-export JAVA_LIBRARY_PATH=${HADOOP_HOME}/lib/native/${JAVA_PLATFORM}
+export JAVA_LIBRARY_PATH=${HADOOP_HOME}/lib/native/ #${JAVA_PLATFORM}
 
 # Datatbase driver name for storing Chukwa Data.
 export JDBC_DRIVER=${TODO_CHUKWA_JDBC_DRIVER}
