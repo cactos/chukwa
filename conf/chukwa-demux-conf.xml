@@ -24,7 +24,7 @@
 <!-- Chukwa Job parameters -->
 	<property>
 	  <name>io.sort.mb</name>
-	  <value>${TODO_DEMUX_IO_SORT_MB}</value>
+	  <value>64</value>
 	  <description>The total amount of buffer memory to use while sorting
 	  files, in megabytes.  By default, gives each merge stream 1MB, which
 	  should minimize seeks.</description>
@@ -32,13 +32,13 @@
 
 	<property>
 	  <name>fs.inmemory.size.mb</name>
-	  <value>${TODO_DEMUX_FS_INMEMORY_SIZE_MB}</value>
+	  <value>64</value>
 	  <description>The size of the in-memory filsystem instance in MB</description>
 	</property>
 
 	<property>
 	  <name>io.sort.factor</name>
-	  <value>${TODO_DEMUX_IO_SORT_FACTOR}</value>
+	  <value>10</value>
 	  <description>The number of streams to merge at once while sorting
 	  files.  This determines the number of open file handles.</description>
 	</property>
@@ -133,9 +133,17 @@
 
   <property>
     <name>Df</name>
-    <value>org.apache.hadoop.chukwa.extraction.demux.processor.mapper.Df</value>
+<!--    <value>org.apache.hadoop.chukwa.extraction.demux.processor.mapper.Df</value>-->
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.df.Df</value>
     <description>Parser class for </description>
   </property>
+
+  <property>
+    <name>Ipmi</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.ipmi.Ipmi</value>
+    <description>Parser class for </description>
+  </property>
+
 
   <property>
     <name>HadoopLog</name>
@@ -217,7 +225,8 @@
 
    <property>
     <name>SystemMetrics</name>
-    <value>org.apache.hadoop.chukwa.extraction.demux.processor.mapper.SystemMetrics</value>
+<!--   <value>org.apache.hadoop.chukwa.extraction.demux.processor.mapper.SystemMetrics</value>-->
+  <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.system.SystemMetricsNG</value>
     <description></description>
    </property>
 
@@ -225,5 +234,80 @@
     <name>JobSummary</name>
     <value>org.apache.hadoop.chukwa.extraction.demux.processor.mapper.JobSummary</value>
    </property>
+	
+	   <property>
+    <name>KvmTop</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.kvmtop.KvmTop</value>
+   </property>
+
+   <property>
+    <name>Hardware</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.h.Hardware</value>
+   </property>
+
+   <property>
+    <name>HUtil</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.hutil.HUtil</value>
+   </property>
+
+   <property>
+    <name>HDisk</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.hdisk.HDisk</value>
+   </property>
+
+   <property>
+    <name>HFilesystem</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.hfilesystem.HFilesystem</value>
+   </property>
+
+   <property>
+    <name>HDiskUtil</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.hdiskutil.HDiskUtil</value>
+   </property>
+
+   <property>
+    <name>VM</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.vm.VM</value>
+   </property>
+
+   <property>
+    <name>HPower</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.hpower.HPower</value>
+   </property>
+
+   <property>
+    <name>HPowerUtil</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.hpowerutil.HPowerUtil</value>
+   </property>
+
+   <property>
+    <name>VmMetadata</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.vmmetadata.VmMetadata</value>
+   </property>
+   
+   <property>
+    <name>Visor</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.visor.Visor</value>
+   </property>
+   
+    <property>
+    <name>WriteState</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.writestate.WriteState</value>
+   </property>
+   
+   <property>
+    <name>DeleteVM</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.deletevm.DeleteVM</value>
+   </property>
+   
+   <property>
+    <name>AppInstanceDeployed</name>
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.appinstance.AppInstanceDeployed</value>
+   </property>
+	
+   <property>
+    <name>VirtTop</name>
+<!--    <value>org.apache.hadoop.chukwa.extraction.demux.processor.mapper.VirtTop</value>-->
+    <value>eu.cactosfp7.datacollection.chukwa.demux.mapper.virttop.VirtTop</value>
+   </property>
 </configuration>
- 

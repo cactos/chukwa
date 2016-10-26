@@ -36,7 +36,7 @@
   <!-- LocalWriter parameters
   <property>
     <name>chukwaCollector.localOutputDir</name>
-    <value>${TODO_COLLECTORS_LOCAL_OUTPUT_DIR}</value>
+    <value>/tmp/chukwa/dataSink/</value>
     <description>Chukwa local data sink directory, see LocalWriter.java</description>
   </property>
 
@@ -45,7 +45,7 @@
     <value>org.apache.hadoop.chukwa.datacollection.writer.localfs.LocalWriter</value>
     <description>Local chukwa writer, see LocalWriter.java</description>
   </property>
-  -->
+ --> 
 
   <!-- When writing to HBase, uncomment the following parameters. If you're running
   HBase in distributed mode, you'll also need to copy your hbase-site.xml file with
@@ -53,9 +53,9 @@
   <!-- HBaseWriter parameters -->
   <property>
     <name>chukwaCollector.pipeline</name>
-    <value>org.apache.hadoop.chukwa.datacollection.writer.SocketTeeWriter,org.apache.hadoop.chukwa.datacollection.writer.hbase.HBaseWriter</value>
-  </property>
-
+<!--    <value>org.apache.hadoop.chukwa.datacollection.writer.SocketTeeWriter,org.apache.hadoop.chukwa.datacollection.writer.hbase.HBaseWriter</value>-->
+    <value>org.apache.hadoop.chukwa.datacollection.writer.SocketTeeWriter,eu.cactosfp7.datacollection.chukwa.writer.hbase.HBaseWriterNG</value>
+    </property>
   <property>
     <name>hbase.demux.package</name>
     <value>org.apache.hadoop.chukwa.extraction.demux.processor</value>
@@ -82,7 +82,7 @@
 
   <property>
     <name>writer.hdfs.filesystem</name>
-    <value>${TODO_COLLECTORS_NAMENODE}</value>
+    <value>hdfs://localhost:8020</value>
     <description>HDFS to dump to</description>
   </property>
   
@@ -94,13 +94,13 @@
 
   <property>
     <name>chukwaCollector.rotateInterval</name>
-    <value>${TODO_COLLECTORS_ROTATEINTERVAL}</value>
+    <value>300000</value>
     <description>Chukwa rotate interval (ms)</description>
   </property>
 
   <property>
     <name>chukwaCollector.isFixedTimeRotatorScheme</name>
-    <value>${TODO_COLLECTORS_ISFIXEDTIMEROTATORSCHEME}</value>
+    <value>false</value>
     <description>A flag to indicate that the collector should close at a fixed
     offset after every rotateInterval. The default value is false which uses
     the default scheme where collectors close after regular rotateIntervals.
@@ -115,13 +115,13 @@
 
   <property>
     <name>chukwaCollector.fixedTimeIntervalOffset</name>
-    <value>${TODO_COLLECTORS_FIXEDTIMEINTERVALOFFSET}</value>
+    <value>30000</value>
     <description>Chukwa fixed time interval offset value (ms)</description>
   </property>
 
   <property>
     <name>chukwaCollector.http.port</name>
-    <value>${TODO_COLLECTORS_PORT}</value>
+    <value>8080</value>
     <description>The HTTP port number the collector will listen on</description>
   </property>
 
