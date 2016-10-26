@@ -1,1 +1,1 @@
-add ExecAdaptor FileStrace 60 /root/cactoscale/chukwa/adaptors/filestrace.sh 0
+add ExecAdaptor FileStrace 60 ${CHUKWA_ADAPTORS_PATH}/filestrace.sh 0
