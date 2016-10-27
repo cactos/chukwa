@@ -1,14 +1,15 @@
 language: java
-cache:                                                                          
-  directories:                                                                  
-    - $HOME/.m2
+cache:
+  directories:
+  - "$HOME/.m2"
 script: mvn install -DskipTests=true
 deploy:
   provider: releases
-  api_key: ToUVedDr02A/YJggs10hBbFlW3625KAhGVGuO8T0JEMH75wA6NrId4b2252kkS+R5+/854jvCQ6CBH1wMpXoIoSHw1hL4aEKhmb03RJUrucBgQVcgvANRQzQ9ZYQ/gupSEcemfFBQCBjJjMdIZbHJ5pl5c+ORVGRIjdDMx5qp76njQPZY05GH59l6/C+UJNumQHx3Lw6hT06Y/o9JKY+se7P7pkB8BGz9ZNel8YYN71BDEaTTj/Bjpq28NF4FyVIm69WCuNOIsFXZ7NTwL8Fb74X+1Cmh6fRvHxUUPlZo9q1eZRPsZHN+VprXSEZk0V8oxtMTKLu2j93PbuObeOg8+jdfbRf+TeLIXM0zawUp85gr5Jw75sKtazLQ9KhMz0tSDRF1624lRF6ZOUOUMbPE5uhZOaR2TJ13pTTn8sC948eIKVqqZtoA6gYaxLgkQHBLVC2kZUN4/9zf727d6mQ3nQ1Rxqam9XtZ5G8kUROGqwj2j8d7fy8NAQNVTgA0PbC1w/kfffXBqREf4VqtSEfjmNNs1GwIr5LMzlUmLd6AQEgvaPmw2IgPtmKaFuLm3Xcee4rjwHb5iTnzarA39uZ5g7+yypO6ZajXz8WWmWW/6NZRyJaqZWu7GHByCA2fr+zW5faMQ219aeVbbBaSP2f1Qnm/+2nmuRNj15IzozqkeI=
+  api_key:
+    secure: GbCoHMx8z30bak3fsX3WX98W/u471AM+Bljucy2J0rFPjELsvRq5Tuzr6vvcdzhIFsALFGoppUqxf/ydK7zjH6EF6jpC5EK3bwp8vl39PavbFYWD4YYzhEpxAL5YQH7KvsZF5udyxZt4Eo1erfkSxlkauf6GU6oKOj0rUZt0v2GSUKaBy9CEkxajKoi71IN72HJHGKujT0deCChIDQiDUvGFO583EBh5nrnuqukH35g3YBBnBLgnLjlvnKxIWHdYkDrM/nnJu6v6K6mWWXpajwxKZfDEbEF2uuub/CfKar+cpqkGcS6paHdmjd05x4tr+qlGEDFAfjtlK3ZHPC8f8nsv9GAka5EmjtqFZe2Q+VyBDtvjv5hy/ptK0yy2I569JKRn9kIRn1tEhdc01ACYXQGthYatVmuubpdfyvWZRj72KKX52/9qJ9qFYj2PCfEFHmaV0eIRNROtXzZtAcrS/iN+WplRkwTGUolzEZi1ab5cfuFLABRZHRiAv30BNXt5TeiWvi29sUFCq3EM55iOOJ45fInv29Zn5R8SQnKVDP6IP5OA2YWswHtW5SIZ4x5Iblu00e9XQbJLcs8z5l26YjvpnOTymBedO1d5EgMcEIt06JQ1hLfNP+NjqxDFMu/aXJZ7B9R0mImFQM8LQUTD3SwB05cpcv6yO574p8t0Nvg=
   file:
-    - "target/chukwa-incubating-0.5.0-agent.tar.gz"
-    - "target/chukwa-incubating-0.5.0-collector.tar.gz"
+  - target/chukwa-incubating-0.5.0-agent.tar.gz
+  - target/chukwa-incubating-0.5.0-collector.tar.gz
   skip_cleanup: true
   on:
     tags: true
