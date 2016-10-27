@@ -3,3 +3,12 @@ cache:
   directories:                                                                  
     - $HOME/.m2
 script: mvn install -DskipTests=true
+deploy:
+  provider: releases
+  api_key: 65d865f6ad4287bb6504ff0fe9236c532afd1981
+  file:
+    - "target/chukwa-incubating-0.5.0-agent.tar.gz"
+    - "target/chukwa-incubating-0.5.0-collector.tar.gz"
+  skip_cleanup: true
+  on:
+    tags: true
