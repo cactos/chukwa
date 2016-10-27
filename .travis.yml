@@ -8,8 +8,8 @@ deploy:
   api_key:
     secure: GbCoHMx8z30bak3fsX3WX98W/u471AM+Bljucy2J0rFPjELsvRq5Tuzr6vvcdzhIFsALFGoppUqxf/ydK7zjH6EF6jpC5EK3bwp8vl39PavbFYWD4YYzhEpxAL5YQH7KvsZF5udyxZt4Eo1erfkSxlkauf6GU6oKOj0rUZt0v2GSUKaBy9CEkxajKoi71IN72HJHGKujT0deCChIDQiDUvGFO583EBh5nrnuqukH35g3YBBnBLgnLjlvnKxIWHdYkDrM/nnJu6v6K6mWWXpajwxKZfDEbEF2uuub/CfKar+cpqkGcS6paHdmjd05x4tr+qlGEDFAfjtlK3ZHPC8f8nsv9GAka5EmjtqFZe2Q+VyBDtvjv5hy/ptK0yy2I569JKRn9kIRn1tEhdc01ACYXQGthYatVmuubpdfyvWZRj72KKX52/9qJ9qFYj2PCfEFHmaV0eIRNROtXzZtAcrS/iN+WplRkwTGUolzEZi1ab5cfuFLABRZHRiAv30BNXt5TeiWvi29sUFCq3EM55iOOJ45fInv29Zn5R8SQnKVDP6IP5OA2YWswHtW5SIZ4x5Iblu00e9XQbJLcs8z5l26YjvpnOTymBedO1d5EgMcEIt06JQ1hLfNP+NjqxDFMu/aXJZ7B9R0mImFQM8LQUTD3SwB05cpcv6yO574p8t0Nvg=
   file:
-  - "chukwa-incubating-0.5.0-agent.tar.gz"
-  - "chukwa-incubating-0.5.0-collector.tar.gz"
+  - "target/chukwa-incubating-0.5.0-agent.tar.gz"
+  - "target/chukwa-incubating-0.5.0-collector.tar.gz"
   skip_cleanup: true
   on:
     repo: cactos/chukwa
