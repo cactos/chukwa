@@ -1,1 +1,1 @@
-http://<collector_ip>:8080
+http://${CHUKWA_COLLECTOR_IP}:8080
